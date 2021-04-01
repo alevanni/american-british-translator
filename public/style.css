@@ -8,19 +8,24 @@ code {
 }
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--main-bg-color)  
+  background-color: var(--main-bg-color);
+
 }
 h1{
+  margin: 20px auto;
   color:  var(--main-text-color);
+  
  /* -webkit-text-stroke-color: white;*/
  /* -webkit-text-stroke-width: 0.5px;*/
 }
+
 hr {
   border: 1px solid  var(--main-text-color2);
 }
 .container {
   display: flex;
   flex-direction: column;
+  
 }
 
 .form-container {
@@ -31,6 +36,7 @@ hr {
 textarea {
   width: 100%;
   font-family: Arial, sans-serif;
+  font-weight: normal;
   color: var(--main-text-color);
   border: solid 2px var(--main-text-color);
   border-radius:5px;
@@ -50,11 +56,13 @@ input[type="button"] {
 }
 
 #locale-select {
+  font-family: Arial, sans-serif;
   background-color: var(--main-text-color);
   color: var(--main-bg-color);
   border-radius: 5px;
 }
 #translate-btn{
+  font-family: Arial, sans-serif;
   background-color: var(--main-text-color);
   color: var(--main-bg-color);
   border-radius: 5px;
@@ -69,8 +77,7 @@ input[type="button"] {
   font-weight: bold;
   color:  var(--main-text-color);
   font-size: 25px;
-  -webkit-text-stroke-color: white;
-  -webkit-text-stroke-width: 0.3px;
+  
 }
 
 #solution-container {
@@ -96,6 +103,10 @@ input[type="button"] {
 }
 
 @media (min-width: 800px) {
+  body{
+   /*padding-left: 50px;
+   padding-right: 50px;*/
+  }
   .container {
     flex-direction: row;
   }

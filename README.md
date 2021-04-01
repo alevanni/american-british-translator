@@ -1,5 +1,6 @@
 # [Quality Assurance Projects - American / British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
-Project can be found on repl at https://boilerplate-project-american-british-english-translator.alevanni.repl.co
+![Image](https://lh3.googleusercontent.com/hxfgaN9cmgzdp_QF7TJBulMbJ4XcrjGod0aiCKURLYaa69F1vOTVS6nf-YH0ZeqiMYnROva0KbAeq87BAGLqT1yFo43PLqjKaMz5TokKnewrETrV5mAWp33mpMtCHZC3ltges0Tw4g=w2400)
+Project can be found on repl at https://american-british-translator.alevanni.repl.co/
 All logic goes into /components/translator.js
 Complete the /api/translate route in /routes/api.js
 Create all of the unit/functional tests in tests/1_unit-tests.js and tests/2_functional-tests.js

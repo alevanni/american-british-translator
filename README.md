@@ -1,14 +1,15 @@
 # [Quality Assurance Projects - American / British Translator](https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator)
 ![Image](https://lh3.googleusercontent.com/hxfgaN9cmgzdp_QF7TJBulMbJ4XcrjGod0aiCKURLYaa69F1vOTVS6nf-YH0ZeqiMYnROva0KbAeq87BAGLqT1yFo43PLqjKaMz5TokKnewrETrV5mAWp33mpMtCHZC3ltges0Tw4g=w2400)
-Project can be found on repl at https://american-british-translator.alevanni.repl.co/
-All logic goes into /components/translator.js
-Complete the /api/translate route in /routes/api.js
-Create all of the unit/functional tests in tests/1_unit-tests.js and tests/2_functional-tests.js
-A very basic template for the manual test cases is in the file /tests/myTestCaseTemplate.ods.
-Postman functional tests are in the file /tests directory.
-See the JavaScript files in /components for the different spelling and terms your application should translate
-To run the tests on Repl.it, set NODE_ENV to test without quotes in the .env file
-To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+- Project can be found on repl at https://american-british-translator.alevanni.repl.co/
+- All logic goes into /components/translator.js
+- Complete the /api/translate route in /routes/api.js
+- Create all of the unit/functional tests in tests/1_unit-tests.js and tests/2_functional-tests.js
+- A very basic template for the manual test cases is in the file /tests/myTestCaseTemplate.ods.
+- Postman functional tests are in the file /tests/POST suite.postman_collection.json.
+- See the JavaScript files in /components for the different spelling and terms your application should translate
+- To run the tests on Repl.it, set NODE_ENV to test without quotes in the .env file
+- To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
+
 Write the following tests in tests/1_unit-tests.js:
 
  - Translate Mangoes are my favorite fruit. to British English

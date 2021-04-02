@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "d888cbfb-118b-4d48-b7ce-0c94d5e8e332",
+		"name": "POST suite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Translation with text and locale fields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"translation\");\r",
+							"    pm.expect(my_json.translation).to.be.eql(\"<span class=\\\"highlight\\\">Mr</span> Smith <span class=\\\"highlight\\\">carbonised</span> <span class=\\\"highlight\\\">black pudding</span> at <span class=\\\"highlight\\\">2.30</span> and <span class=\\\"highlight\\\">3.40</span>\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "Mr. Smith carbonized blood sausage at 2:30 and 3:40",
+							"type": "text"
+						},
+						{
+							"key": "locale",
+							"value": "american-to-british",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translation with text and invalid locale field",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"error\");\r",
+							"    pm.expect(my_json.error).to.be.eql(\"Invalid value for locale field\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "Mr. Smith carbonized blood sausage at 2:30 and 3:40",
+							"type": "text"
+						},
+						{
+							"key": "locale",
+							"value": "french-to-british",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translation with missing text field",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"error\");\r",
+							"    pm.expect(my_json.error).to.be.eql(\"Required field(s) missing\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "locale",
+							"value": "american-to-british",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translation with missing locale field",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"error\");\r",
+							"    pm.expect(my_json.error).to.be.eql(\"Required field(s) missing\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "Mr. Smith carbonized blood sausage at 2:30 and 3:40",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translation with empty text",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"error\");\r",
+							"    pm.expect(my_json.error).to.be.eql(\"No text to translate\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "locale",
+							"value": "american-to-british",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translation with text that needs no translation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json).to.have.property(\"translation\");\r",
+							"    pm.expect(my_json.translation).to.be.eql(\"Everything looks good to me!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "Hi there, good morning!",
+							"type": "text"
+						},
+						{
+							"key": "locale",
+							"value": "british-to-american",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://american-british-translator.alevanni.repl.co/api/translate",
+					"protocol": "https",
+					"host": [
+						"american-british-translator",
+						"alevanni",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"translate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

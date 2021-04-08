@@ -6,6 +6,7 @@
 - Create all of the unit/functional tests in tests/1_unit-tests.js and tests/2_functional-tests.js
 - A very basic template for the manual test cases is in the file /tests/myTestCaseTemplate.ods.
 - Postman functional tests are in the file /tests/POST suite.postman_collection.json.
+- Postman results are in the file /tests/POST suite.test.json
 - See the JavaScript files in /components for the different spelling and terms your application should translate
 - To run the tests on Repl.it, set NODE_ENV to test without quotes in the .env file
 - To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
